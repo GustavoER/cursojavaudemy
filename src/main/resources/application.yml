@@ -1,0 +1,21 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: ${URL_DATABASE}
+    password: ${URL_PASSWORD}
+    username: ${URL_USERNAME}
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.SQLServerDialect
+
+
+
+URL_DATABASE: jdbc:sqlserver://localhost:1433;databaseName=db
+URL_USERNAME: gustavo
+URL_PASSWORD: 123
