@@ -12,10 +12,11 @@
 	<artifactId>workshop</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>workshop</name>
-	<description>Curso java</description>
+	<description>curso java</description>
 
 	<properties>
 		<java.version>11</java.version>
+		<lombok>1.18.4</lombok>
 	</properties>
 
 	<dependencies>
@@ -32,7 +33,7 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<version>1.18.4</version>
+			<version>${lombok}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -53,6 +54,12 @@
 			<groupId>com.microsoft.sqlserver</groupId>
 			<artifactId>mssql-jdbc</artifactId>
 			<version>7.2.0.jre11</version>
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+            <version>8.0.15</version>
+			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.hibernate</groupId>

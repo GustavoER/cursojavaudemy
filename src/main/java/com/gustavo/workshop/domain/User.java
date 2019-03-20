@@ -1,11 +1,15 @@
 package com.gustavo.workshop.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 @NoArgsConstructor
-@AllArgsConstructor
+
 @Getter
 @Setter
 @EqualsAndHashCode(of = {"id"})
@@ -20,4 +24,20 @@ public class User implements Serializable {
     private String name;
     @Column(name = "email", length = 60)
     private String email;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Post.class)
+    @JsonBackReference
+    private List<Post> posts;
+
+    public User(Integer id, String name, String email) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+    }
+
+    public User(Integer id, String name, String email, List<Post> posts) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.posts = posts;
+    }
 }
